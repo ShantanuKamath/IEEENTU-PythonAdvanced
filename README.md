@@ -28,7 +28,7 @@ print colors[2]    ## green
 print len(colors)  ## 3
 
 # list with multiple variable types
-me = ['Shantanu Kamath', 'Computer Science', 21, 1000000]
+me = ['Shantanu Kamath', 'Computer Science', 20, 1000000]
 print(me[3])    ## 1000000
 print(len(me))  ## 4
 ```
@@ -198,6 +198,63 @@ else:
   print ("There is no 'is' here!")
 ```
 
-### Sequential Search Algorithm *(OPTIONAL)*
+#### Sequential Search Algorithm *(Optional)*
+When data items are stored in a collection such as a list, we say that they have a linear or sequential relationship. Each data item is stored in a position relative to the others.   
+In Python lists, these relative positions are the index values of the individual items. Since these index values are ordered, it is possible for us to visit them in sequence.
+
+```python
+# Sequential search algorithm
+
+def sequentialSearch(alist, item):
+  pos = 0
+  found = False
+  while pos < len(alist) and not found:
+    if alist[pos] == item:
+      found = True;
+    else:
+      pos = pos + 1
+  if pos == len(alist):
+     return -1
+  return pos
+
+testlist = [1, 2, 32, 8, 17, 19, 42, 13, 0]
+print(sequentialSearch(testlist, 3))
+print(sequentialSearch(testlist, 13))
+```
+
+#### Binary Search Algorithm *(Optional)*
+*Binary search requires the list to be in a sorted order.*
+Instead of searching the list in sequence, a binary search will start by examining the middle item. If that item is the one we are searching for, we are done.   
+If it is not the correct item, we can use the ordered nature of the list to eliminate half of the remaining items.   
+If the item we are searching for is greater than the middle item, we know that the entire lower half of the list as well as the middle item can be eliminated from further consideration. The item, if it is in the list, must be in the upper half.
+We can then repeat the process with the upper half. Start at the middle item and compare it against what we are looking for. Again, we either find it or split the list in half, therefore eliminating another large part of our possible search space.
+
+```python
+# Binary search algorithm
+
+def binarySearch(alist, item):
+  first = 0
+  last = len(alist)-1
+  found = False
+
+  while first<=last and not found:
+      midpoint = (first + last)//2
+      if alist[midpoint] == item:
+          found = True
+          return midpoint
+      else:
+          if item < alist[midpoint]:
+              last = midpoint-1
+          else:
+              first = midpoint+1
+  return -1
+
+testlist = [0, 1, 2, 8, 13, 17, 19, 32, 42]
+print(binarySearch(testlist, 3))
+print(binarySearch(testlist, 13))
+```
+
+
+For more on searching algorithms (Hashing) you can refer to [InteractivePython Tutorials](http://interactivepython.org/runestone/static/pythonds/SortSearch/toctree.html)
 
 ## Sorting
