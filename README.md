@@ -37,14 +37,64 @@ print(len(me))  ## 4
 
 Besides simple accessing of values, lists have a large variety of methods that are used to performed different useful manipulations on them.  
 Some of them are:  
+
 - **list.append(element):** adds a single element to the end of the list. Common error: does not return the new list, just modifies the original.
+
+```python
+# list.append example
+names = ["Hermione Granger", "Ronald Weasley"]
+names.append("Harry Potter")
+print(names)  ## ["Hermione Granger", "Ronald Weasley", "Harry Potter"]
+```
+
 - **list.insert(index, element):** inserts the element at the given index, shifting elements to the right.
-list.extend(list2) adds the elements in list2 to the end of the list. Using + or += on a list is similar to using extend().
+
+```python
+# list.append example
+names = ["Ronald Weasley", "Hermione Granger"]
+names.insert(1, "Harry Potter")
+print(names)  ## ["Ronald Weasley", "Hermione Granger"]
+```
+
+- **list.extend(list2):** adds the elements in list2 to the end of the list. Using + or += on a list is similar to using extend().
+
+```python
+# list.extend example
+MainChar = ["Ronald Weasley", "Harry Potter", "Hermione Granger"]
+SupChar = ["Neville Longbottom", "Luna Lovegood"]
+MainChar.extend(SupChar)
+print(names)  ## ["Ronald Weasley", "Harry Potter", "Hermione Granger", "Neville Longbottom", "Luna Lovegood"]
+```
+
 - **list.index(element):** searches for the given element from the start of the list and returns its index. Throws a ValueError if the element does not appear (use "in" to check without a ValueError).
+
+```python
+# list.index example
+names = ["Ronald Weasley", "Harry Potter", "Hermione Granger"]
+print(names.index("Harry Potter"))
+
+```
+
 - **list.remove(element):** searches for the first instance of the given element and removes it (throws ValueError if not present)
+
+```python
+```
+
 - **list.sort():** sorts the list in place (does not return it). (The sorted() function shown below is preferred.)
+
+```python
+```
+
 - **list.reverse():** reverses the list in place (does not return it)
+
+```python
+```
+
 - **list.pop(index):** removes and returns the element at the given index. Returns the rightmost element if index is omitted (roughly the opposite of append()).
+
+```python
+```
+
 
 ## List Comprehensions
 In Python, List comprehensions provide a concise way to create lists.  
