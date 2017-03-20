@@ -28,7 +28,7 @@ print colors[2]    ## green
 print len(colors)  ## 3
 
 # list with multiple variable types
-me = ["Shantanu Kamath", "Computer Science", 21, 1000000]
+me = ['Shantanu Kamath', 'Computer Science', 21, 1000000]
 print(me[3])    ## 1000000
 print(len(me))  ## 4
 ```
@@ -42,60 +42,79 @@ Some of them are:
 
 ```python
 # list.append example
-names = ["Hermione Granger", "Ronald Weasley"]
-names.append("Harry Potter")
-print(names)  ## ["Hermione Granger", "Ronald Weasley", "Harry Potter"]
+names = ['Hermione Granger', 'Ronald Weasley']
+names.append('Harry Potter')
+print(names)  ## ['Hermione Granger', 'Ronald Weasley', 'Harry Potter']
 ```
 
 - **list.insert(index, element):** inserts the element at the given index, shifting elements to the right.
 
 ```python
 # list.append example
-names = ["Ronald Weasley", "Hermione Granger"]
-names.insert(1, "Harry Potter")
-print(names)  ## ["Ronald Weasley", "Hermione Granger"]
+names = ['Ronald Weasley', 'Hermione Granger']
+names.insert(1, 'Harry Potter')
+print(names)  ## ['Ronald Weasley', 'Harry Potter', 'Hermione Granger']
 ```
 
 - **list.extend(list2):** adds the elements in list2 to the end of the list. Using + or += on a list is similar to using extend().
 
 ```python
 # list.extend example
-MainChar = ["Ronald Weasley", "Harry Potter", "Hermione Granger"]
-SupChar = ["Neville Longbottom", "Luna Lovegood"]
+MainChar = ['Ronald Weasley', 'Harry Potter', 'Hermione Granger']
+SupChar = ['Neville Longbottom', 'Luna Lovegood']
 MainChar.extend(SupChar)
-print(names)  ## ["Ronald Weasley", "Harry Potter", "Hermione Granger", "Neville Longbottom", "Luna Lovegood"]
+print(MainChar)  ## ['Ronald Weasley', 'Harry Potter', 'Hermione Granger', 'Neville Longbottom', 'Luna Lovegood']
 ```
 
-- **list.index(element):** searches for the given element from the start of the list and returns its index. Throws a ValueError if the element does not appear (use "in" to check without a ValueError).
+- **list.index(element):** searches for the given element from the start of the list and returns its index. Throws a ValueError if the element does not appear (use 'in' to check without a ValueError).
 
 ```python
 # list.index example
-names = ["Ronald Weasley", "Harry Potter", "Hermione Granger"]
-print(names.index("Harry Potter"))
+names = ['Ronald Weasley', 'Harry Potter', 'Hermione Granger']
+index = names.index('Harry Potter')  
+print(index)  ## 1
 
+# Throws a ValueError
+index = names.index('Albus Dumbledore')
 ```
 
 - **list.remove(element):** searches for the first instance of the given element and removes it (throws ValueError if not present)
 
 ```python
-```
-
-- **list.sort():** sorts the list in place (does not return it). (The sorted() function shown below is preferred.)
-
-```python
-```
-
-- **list.reverse():** reverses the list in place (does not return it)
-
-```python
+names = ['Ronald Weasley', 'Harry Potter', 'Hermione Granger']
+index = names.remove('Harry Potter')  ## ['Ronald Weasley', 'Hermione Granger']
+print(names)
 ```
 
 - **list.pop(index):** removes and returns the element at the given index. Returns the rightmost element if index is omitted (roughly the opposite of append()).
 
 ```python
+names = ['Ronald Weasley', 'Harry Potter', 'Hermione Granger']
+index = names.pop(1)
+print(names)  ## ['Ronald Weasley', 'Hermione Granger']
 ```
 
+- **list.sort():** sorts the list in place (does not return it). (The sorted() function shown below is preferred.)
+
+```python
+alphabets = ['a', 'f','c', 'e','b', 'd']
+alphabets.sort();
+print (alphabets) ## ['a', 'b', 'c', 'd', 'e', 'f']
+```
+
+- **list.reverse():** reverses the list in place (does not return it)
+
+```python
+alphabets = ['a', 'b', 'c', 'd', 'e', 'f']
+alphabets.reverse()
+print(alphabets)  ## ['f', 'e', 'd', 'c', 'b', 'a']
+```
 
 ## List Comprehensions
-In Python, List comprehensions provide a concise way to create lists.  
-Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.
+In Python, List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence, or to create a subsequence of those elements that satisfy a certain condition.
+
+For example :  It can be used to construct lists in a very natural, easy way, like a mathematician is used to do.
+
+- S = {x² : x in {0 ... 9}}
+- V = (1, 2, 4, 8, ..., 2¹²)
+- M = {x | x in S and x even}
