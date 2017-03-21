@@ -198,7 +198,7 @@ else:
   print ("There is no 'is' here!")
 ```
 
-#### Sequential Search Algorithm *(Optional)*
+#### Sequential Search Algorithm
 When data items are stored in a collection such as a list, we say that they have a linear or sequential relationship. Each data item is stored in a position relative to the others.   
 In Python lists, these relative positions are the index values of the individual items. Since these index values are ordered, it is possible for us to visit them in sequence.
 
@@ -223,10 +223,10 @@ print(sequentialSearch(testlist, 13))
 ```
 
 #### Binary Search Algorithm *(Optional)*
-*Binary search requires the list to be in a sorted order.*
+***Binary search requires the list to be in a sorted order.***    
 Instead of searching the list in sequence, a binary search will start by examining the middle item. If that item is the one we are searching for, we are done.   
 If it is not the correct item, we can use the ordered nature of the list to eliminate half of the remaining items.   
-If the item we are searching for is greater than the middle item, we know that the entire lower half of the list as well as the middle item can be eliminated from further consideration. The item, if it is in the list, must be in the upper half.
+If the item we are searching for is greater than the middle item, we know that the entire lower half of the list as well as the middle item can be eliminated from further consideration. The item, if it is in the list, must be in the upper half.   
 We can then repeat the process with the upper half. Start at the middle item and compare it against what we are looking for. Again, we either find it or split the list in half, therefore eliminating another large part of our possible search space.
 
 ```python
@@ -258,3 +258,55 @@ print(binarySearch(testlist, 13))
 For more on searching algorithms (Hashing) you can refer to [InteractivePython Tutorials](http://interactivepython.org/runestone/static/pythonds/SortSearch/toctree.html)
 
 ## Sorting
+Sorting is the process of placing elements from a collection in some kind of order.   
+For example, a list of words could be sorted alphabetically or by length.    
+A list of cities could be sorted by population, by area, or by zip code.
+
+
+Python lists have a ***built-in sort()*** method that modifies the *list in-place* and a ***sorted() built-in*** function that builds a *new* sorted list from an iterable.
+
+- ***list.sort():***  Modifies existing list and can be used only with lists.
+- ***sorted(list):*** Creates a new list when called and can be used with other iterables.
+
+##### Basic sorting functions
+The most basic use of the sorted function can be seen below :  
+
+```python
+# Using sort() with a list.
+
+values = [7, 4, 3, 6, 1, 2, 5]
+print(values)     ## [7, 4, 3, 6, 1, 2, 5]
+newValues = values.sort()
+print(newValues)  ## None
+print(values)     ## [1, 2, 3, 4, 5, 6, 7]
+
+# Using sorted() with a list.
+
+values = [7, 4, 3, 6, 1, 2, 5]
+print(values)     ## [7, 4, 3, 6, 1, 2, 5]
+newValues = sorted(values)
+print(newValues)  ## [1, 2, 3, 4, 5, 6, 7]
+print(values)     ## [7, 4, 3, 6, 1, 2, 5]
+```
+
+##### Sorting using additional key
+For more complex custom sorting, sorted() takes an optional "key=" specifying a "key" function that transforms each element before comparison.    
+The key function takes in 1 value and returns 1 value, and the returned "proxy" value is used for the comparisons within the sort.
+```python
+# Using key in sorted
+
+values = ['ccc', 'aaaa', 'd', 'bb']
+print (sorted(values, key=len))            ## ['d', 'bb', 'ccc', 'aaaa']
+
+# Remember case sensitivity :  All upper case characters come before lower case character in an ascending sequence.
+sentence = "This is a test string from Andrew"
+sorted(sentence.split(), key=str.lower)    ## ['a', 'Andrew', 'from', 'is', 'string', 'test', 'This']
+
+# Using reverse for ascending and descending
+strs = ['aa', 'BB', 'zz', 'CC']
+print sorted(strs)                         ## ['BB', 'CC', 'aa', 'zz'] (case sensitive)
+print sorted(strs, reverse=True)           ## ['zz', 'aa', 'CC', 'BB']
+
+```
+
+For more on sorting algorithms and its implementation you can refer to [InteractivePython Tutorials](http://interactivepython.org/runestone/static/pythonds/SortSearch/toctree.html)
