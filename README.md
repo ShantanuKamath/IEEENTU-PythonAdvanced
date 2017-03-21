@@ -318,6 +318,7 @@ It aims strengthening basics but doesn't justify the broad topic itself. As OOP 
 Below are some essential resources :
 - [Improve Your Python: Python Classes and Object Oriented Programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
 - [Learn Python The Hard Way](https://learnpythonthehardway.org/book/ex40.html)
+- [Python For Beginners](http://www.pythonforbeginners.com)
 - [A Byte Of Python](https://python.swaroopch.com/oop.html)
 
 ### OOP
@@ -327,7 +328,7 @@ There is another way of organizing your program which is to combine data and fun
 
 Most of the time you can use procedural programming, but when writing large programs or have a problem that is better suited to this method, you can use object oriented programming techniques.
 
-#### Classes and Objects
+### Classes and Objects
 Classes and objects are the two main aspects of object oriented programming. A ***class*** creates a new type where ***objects*** are ***instances*** of the class.   
 
 Objects can store data using ordinary variables that belong to the object. Variables that belong to an object or class are referred to as ***fields*** or ***attributes***.
@@ -344,7 +345,7 @@ p = Person()
 print(p)
 
 ```
-#### Methods
+### Methods
 
 Class methods have only one specific difference from ordinary functions - they must have an extra first name that has to be added to the beginning of the parameter list, but you do not give a value for this parameter when you call the method, Python will provide it. This particular variable refers to the object itself, and by convention, it is given the name self.
 
@@ -357,7 +358,7 @@ p = Person()
 p.say_hi()
 ```
 
-##### The __init__
+#### The __init__
 There are many method names which have special significance in Python classes. We will see the significance of the __init__ method now.   
 
 The __init__ method is run as soon as an object of a class is instantiated. The method is useful to do any initialization you want to do with your object. Notice the double underscores both at the beginning and at the end of the name.
@@ -374,7 +375,7 @@ p = Person('Swaroop')
 p.say_hi()
 ```
 
-##### Object variables
+#### Object variables
 Now let us learn about the data part. The data part, i.e. fields, are nothing but ordinary variables that are bound to the namespaces of the classes and objects. This means that these names are valid within the context of these classes and objects only. That's why they are called name spaces.   
 
 There are two types of fields - class variables and object variables which are classified depending on whether the class or the object owns the variables respectively.   
@@ -440,7 +441,7 @@ droid2.die()
 Robot.how_many()
 ```
 
-##### How It Works
+#### How It Works
 This is a long example but helps demonstrate the nature of class and object variables. Here, population belongs to the Robot class and hence is a class variable. The name variable belongs to the object (it is assigned using self) and hence is an object variable.  
 
 Thus, we refer to the population class variable as Robot.population and not as self.population. We refer to the object variable name using self.name notation in the methods of that object. Remember this simple difference between class and object variables. Also note that an object variable with the same name as a class variable will hide the class variable!   
@@ -464,7 +465,113 @@ Thus, the convention followed is that any variable that is to be used only withi
 
 *There are more concepts in OOP such as Inheritance, Abstraction and Polymorphism, which would require a lot more time to cover. You may refer to reference material for explanation on these topics.*
 ## File I/O
+File handling is super simplified in Python compared to other programming languages.
+The first thing you’ll need to know is Python’s built-in ***open*** function to get a ***file object***.   
+The ***open*** function opens a ***file***. When you use the ***open*** function, it returns something called a ***file object***. File objects contain ***methods*** and ***attributes*** that can be used to collect information about the file you opened. They can also be used to manipulate said file.
 
+For example, the ***mode*** attribute of a file object tells you which mode a ***file*** was opened in. And the ***name*** attribute tells you the name of the file that the ***file object*** has opened.
+
+#### File Types
+In Python, a file is categorized as either ***text*** or ***binary***, and the difference between the two file types is important.
+
+***Text files*** are structured as a sequence of lines, where each line includes a sequence of characters. This is what you know as code or syntax.
+
+Each line is terminated with a special character, called the ***EOL*** or ***End of Line*** character. There are several types, but the most common is the ***comma*** {,} or ***newline*** character. It ends the current line and tells the interpreter a new one has begun.
+
+A ***backslash*** character can also be used, and it tells the interpreter that the next character – following the slash – should be treated as a new line. This character is useful when you don’t want to start a new line in the text itself but in the code.
+
+A ***binary file*** is any type of file that is not a text file. Because of their nature, binary files can only be processed by an application that know or understand the file’s structure. In other words, they must be applications that can ***read and interpret*** binary.
+
+#### Open ( ) Function
+The syntax to open a file object in Python is:
+
+```python
+file_object  = open("filename", "mode") ## where file_object is the variable to add the file object.
+```
+The second argument you see – mode – tells the interpreter and developer which way the file will be used.
+
+#### Mode
+Including a mode argument is optional because a default value of ***r*** will be assumed if it is omitted.
+
+The modes are:
+
+- ***r*** – Read mode which is used when the file is only being read
+- ***w*** – Write mode which is used to edit and write new information to the file (any existing files with the same name will be erased when this mode is activated)
+- ***a*** – Appending mode, which is used to add new data to the end of the file; that is new information is automatically amended to the end
+- ***r+*** – Special read and write mode, which is used to handle both actions when working with a file
+
+#### Create a text file
+Using a simple text editor, let’s create a file. You can name it anything you like, and it’s better to use something you’ll identify with.
+For the purpose of this workshop, however, we are going to call it "testfile.txt".
+Just create the file and leave it blank.
+
+To manipulate the file :
+```
+file = open("testfile.txt","w")
+
+file.write("Hello World")
+file.write("This is our new text file")
+file.write("and this is another line.")
+file.write("Why? Because we can.")
+
+file.close()
+```
+
+#### Reading a text file
+Following methods allow reading a file :
+- ***file.read():*** extract a string that contains all characters in the file.
+```python
+file = open("testfile.text", "r")
+print file.read()
+```
+- ***file.read(numberOfCharacters):*** extract only a certain number of characters.  
+```python
+file = open("testfile.txt", "r")
+
+print file.read(5)
+```
+- ***file.readline():*** read a file line by line – as opposed to pulling the content of the entire file at once.
+```python
+file = open("testfile.txt", "r")
+print file.readline()
+```
+- ***file.readline(lineNumber):*** return a specific line
+```python
+file = open("testfile.txt", "r")
+print file.readline(3):
+```
+- ***file.readlines():*** return every line in the file, properly separated in a list
+```python
+file = open("testfile.txt", "r")
+print file.readlines():
+```
+
+#### Looping over file
+When you want to read – or return – all the lines from a file in a more memory efficient, and fast manner, you can use the loop over method. The advantage to using this method is that the related code is both simple and easy to read.
+
+```python
+file = open("testfile.txt", "r")
+for line in file:
+print line
+```
+
+#### Using the File Write Method
+This method is used to add information or content to an existing file. To start a new line after you write data to the file, you can add an ***EOL*** ("\n")) character.
+```python
+file = open("testfile.txt", "w")
+
+file.write("This is a test")
+file.write("To add more lines.")
+
+file.close()
+```
+#### Closing a file
+When you’re done working, you can use the fh.close() command to end things. What this does is close the file completely, terminating resources in use, in turn freeing them up for the system to deploy elsewhere.
+
+It’s important to understand that when you use the fh.close() method, any further attempts to use the file object will fail.
+```python
+file.close()
+```
 ## Importing Modules
 
 ## Scripting
