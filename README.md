@@ -460,6 +460,9 @@ Remember, that you must refer to the variables and methods of the same object us
 All class members are public. One exception: If you use data members with names using the double underscore prefix such as ***__privatevar*** , Python uses name-mangling to effectively make it a private variable.
 
 Thus, the convention followed is that any variable that is to be used only within the class or object should begin with an underscore and all other names are public and can be used by other classes/objects. Remember that this is only a convention and is not enforced by Python (except for the double underscore prefix).
+
+
+*There are more concepts in OOP such as Inheritance, Abstraction and Polymorphism, which would require a lot more time to cover. You may refer to reference material for explanation on these topics.*
 ## File I/O
 
 ## Importing Modules
