@@ -613,6 +613,6 @@ This topic is a little more complex than you would have expected it to be.
 Probably practice more python before you venture into this topic.
 But just to get you to understand what this topic consists of and also appreciate the powerful nature of python,
 Here are a few video clips to showing the result of various python scripts.  
-[Articles showcasing python scripts](https://www.quora.com/What-are-the-best-Python-scripts-youve-ever-written)
-[Movie subtitle downloader](https://youtu.be/Q5YWEqgw9X8)
-[Python Script to download course content from Blackboard learn](https://github.com/NasaGeek/blackboard-export)
+[Articles showcasing python scripts](https://www.quora.com/What-are-the-best-Python-scripts-youve-ever-written)   
+[Movie subtitle downloader](https://youtu.be/Q5YWEqgw9X8)   
+[Python Script to download course content from Blackboard learn](https://github.com/NasaGeek/blackboard-export)   
