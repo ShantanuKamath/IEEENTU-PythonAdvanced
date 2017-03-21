@@ -506,7 +506,7 @@ For the purpose of this workshop, however, we are going to call it "testfile.txt
 Just create the file and leave it blank.
 
 To manipulate the file :
-```
+```python
 file = open("testfile.txt","w")
 
 file.write("Hello World")
@@ -573,5 +573,46 @@ It’s important to understand that when you use the fh.close() method, any furt
 file.close()
 ```
 ## Importing Modules
+So far we haven't explained what a Python module is. To put it in a nutshell: every file, which has the file extension .py and consists of proper Python code, can be seen or is a module.   
+There is no special syntax required to make such a file a module. A module can contain arbitrary objects, for example files, classes or attributes.   
+All those objects can be accessed after an import. There are different ways to import a modules.   
+
+Import one module:
+```python
+>>> import math
+>>> math.pi
+3.141592653589793
+>>> math.sin(math.pi/2)
+1.0
+>>> math.cos(math.pi/2)
+6.123031769111886e-17
+>>> math.cos(math.pi)
+-1.0
+```
+
+Import more than one module in one import statement:
+```python
+import math, random
+```
+If only certain objects of a module are needed, we can import only those:
+```python
+from math import sin, pi
+```
+Instead of explicitly importing certain objects from a module, it's also possible to import everything in the namespace of the importing module:
+```python
+>>> from math import *
+>>> sin(3.01) + tan(cos(2.1)) + e
+2.2968833711382604
+>>> e
+2.718281828459045
+>>>
+```
 
 ## Scripting
+This topic is a little more complex than you would have expected it to be.
+Probably practice more python before you venture into this topic.
+But just to get you to understand what this topic consists of and also appreciate the powerful nature of python,
+Here are a few video clips to showing the result of various python scripts.
+[Articles showcasing python scripts][https://www.quora.com/What-are-the-best-Python-scripts-youve-ever-written]
+[Movie subtitle downloader](https://youtu.be/Q5YWEqgw9X8)
+[Python Script to download course content from Blackboard learn](https://github.com/NasaGeek/blackboard-export)
