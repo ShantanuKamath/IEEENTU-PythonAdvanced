@@ -3,7 +3,13 @@
 *by Shantanu Kamath for IEEE NTU Student Branch*
 
 ***Disclaimer*** *-* *This document is only meant to serve as a reference for the attendees of the workshop. It does not cover all the concepts or implementation details discussed during the actual workshop.*
-
+### To do
+- [x] Make Notebook for Python Basics
+- [ ] Make Notebook for Python Advanced
+- [ ] Add Generators
+- [ ] Add Implementations for Algorithms
+- [ ] Add Implementations for 
+- [ ] Update ReadMe to define and table of contents for different workshops.
 ### Getting Started
 
 - **Python Basics:** This document is meant to go deeper into concepts of programming in Python. It expects the attendees to have basic knowledge of the language that was explained in the introductory workshop - [Python Basics - IEEE NTU](https://github.com/SuyashLakhotia/IEEENTU-PythonBasics/blob/master/README.md).
