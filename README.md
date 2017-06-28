@@ -8,7 +8,9 @@
 - [ ] Make Notebook for Python Advanced
 - [ ] Add Generators
 - [ ] Add Implementations for Algorithms
-- [ ] Add Implementations for 
+- [ ] Move Search and Sort Algorithms from the Advanced ReadMe to Algorithm Implementations
+- [ ] Add Implementations for Data Structures
+- [ ] Add Solutions to Project Euler
 - [ ] Update ReadMe to define and table of contents for different workshops.
 ### Getting Started
 
@@ -23,20 +25,24 @@ In Python, it is possible to create a list of values. Each item in the list is c
 ```python
 # list of numbers of type Integer
 numbers = [1, 2, 3, 4, 5]
-print(numbers)       ## [1, 2, 3, 4, 5]
-print(numbers[1])    ## 2
-print(len(numbers))  ## 5
+print("List :", numbers)
+print("Second element :", numbers[1])    ## 2
+print("Length of list :",len(numbers))   ## 5
+print() # Empty line
 
 # list of strings
 colors = ['red', 'blue', 'green']
-print colors[0]    ## red
-print colors[2]    ## green
-print len(colors)  ## 3
+print("List :", colors)
+print ("First color :", colors[0])      ## red
+print ("Third color :", colors[2])      ## green
+print ("Length of list :",len(colors))  ## 3
+print() # Empty line
 
 # list with multiple variable types
 me = ['Shantanu Kamath', 'Computer Science', 20, 1000000]
-print(me[3])    ## 1000000
-print(len(me))  ## 4
+print("List :", me)
+print("Fourth element :", me[3])        ## 1000000
+print("Length of list :", len(me))      ## 4
 ```
 
 ## List Methods
@@ -56,7 +62,7 @@ print(names)  ## ['Hermione Granger', 'Ronald Weasley', 'Harry Potter']
 - **list.insert(index, element):** inserts the element at the given index, shifting elements to the right.
 
 ```python
-# list.append example
+# list.insert example
 names = ['Ronald Weasley', 'Hermione Granger']
 names.insert(1, 'Harry Potter')
 print(names)  ## ['Ronald Weasley', 'Harry Potter', 'Hermione Granger']
@@ -182,7 +188,7 @@ Sometimes it can be important to get the position of the searched value. In that
 
 values = [3,5,2,4,1]
 if 5 in values:
-  print(values.index(5))  ## 1
+  print("Value present at",values.index(5))  ## 1
 else:
   print("Value not present in list")
 
@@ -191,17 +197,17 @@ else:
 sentence = "This be a string"
 index = sentence.find("is")
 if index == -1:
-  print ("There is no 'is' here!")
+  print("There is no 'is' here!")
 else:
-  print ("Found 'is' in the sentence at position "+str(index))
+  print("Found 'is' in the sentence at position "+str(index))
 
 # Using index to find words in a list of words
 sentence = "This be a string"
 words = sentence.split(' ')
 if 'is' in words:
-  print ("Found 'is' in the list at position "+str(words.index('is'))) ## 1
+  print("Found 'is' in the list at position "+str(words.index('is')))
 else:
-  print ("There is no 'is' here!")
+  print("There is no 'is' here!")
 ```
 
 #### Sequential Search Algorithm
@@ -281,18 +287,18 @@ The most basic use of the sorted function can be seen below :
 # Using sort() with a list.
 
 values = [7, 4, 3, 6, 1, 2, 5]
-print(values)     ## [7, 4, 3, 6, 1, 2, 5]
+print("Unsorted list :", values)     ## [7, 4, 3, 6, 1, 2, 5]
 newValues = values.sort()
-print(newValues)  ## None
-print(values)     ## [1, 2, 3, 4, 5, 6, 7]
-
+print("New list :", newValues)       ## None
+print("Old list :", values)          ## [1, 2, 3, 4, 5, 6, 7]
+print()
 # Using sorted() with a list.
 
 values = [7, 4, 3, 6, 1, 2, 5]
-print(values)     ## [7, 4, 3, 6, 1, 2, 5]
+print("Unsorted list :", values)     ## [7, 4, 3, 6, 1, 2, 5]
 newValues = sorted(values)
-print(newValues)  ## [1, 2, 3, 4, 5, 6, 7]
-print(values)     ## [7, 4, 3, 6, 1, 2, 5]
+print("New list :", newValues)       ## [1, 2, 3, 4, 5, 6, 7]
+print("Old list :", values)          ## [7, 4, 3, 6, 1, 2, 5]
 ```
 
 ##### Sorting using additional key
@@ -611,7 +617,6 @@ Instead of explicitly importing certain objects from a module, it's also possibl
 2.2968833711382604
 >>> e
 2.718281828459045
->>>
 ```
 
 ## Scripting
