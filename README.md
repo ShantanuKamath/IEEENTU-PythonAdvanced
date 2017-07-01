@@ -5,7 +5,7 @@
 ***Disclaimer*** *-* *This document is only meant to serve as a reference for the attendees of the workshop. It does not cover all the concepts or implementation details discussed during the actual workshop.*
 ### To do
 - [x] Make Notebook for Python Basics
-- [ ] Make Notebook for Python Advanced
+- [x] Make Notebook for Python Advanced
 - [ ] Add Generators
 - [ ] Add Implementations for Algorithms
 - [ ] Move Search and Sort Algorithms from the Advanced ReadMe to Algorithm Implementations
