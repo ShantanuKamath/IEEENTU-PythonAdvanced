@@ -1,4 +1,4 @@
-# Python Advanced
+# Python Workshops
 
 *by Shantanu Kamath for various workshops and tutorials.*
 
@@ -19,5 +19,5 @@
 - **Python Notebooks:** Most of the python notebooks are were built using the [Jupyter Notebook](http://jupyter.org). These files have a static view available on GitHub but attendees are advised to install Jupyter on their devices and learn using the interactive environment provided in the notebooks.
 
 ### Table of Contents
-- [Python Basics Notebook](https://github.com/ShantanuKamath/PythonDetection/blob/master/1.%20Python%20Basics.ipynb)
-- [Python Advanced Notebook](https://github.com/ShantanuKamath/PythonWorkshop/blob/master/Python%20Advanced.ipynb)
+- [Python Basics Notebook](https://github.com/ShantanuKamath/PythonWorkshop/blob/master/1.%20Python%20Basics.ipynb)
+- [Python Advanced Notebook](https://github.com/ShantanuKamath/PythonWorkshop/blob/master/2.%20Python%20Advanced.ipynb)
